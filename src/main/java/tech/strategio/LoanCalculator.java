@@ -7,13 +7,24 @@ public class LoanCalculator {
     /**
      * TODO: finish out this JavaDoc comment block.
      * FIXME: WHAT DOES THIS METHOD DO?
-     * 
+     *
+     * Each iteration takes 10% off the amount, (or 90% of the amount),
+     * Once the while loop has gone through 3 times, the final amount is returned.
+     *
      * @param ???
      * @return ???
      */
     static int getRemainingAmountIn3Months(int amount) {
-        // TODO: Rewrite this method
-        return -1;
+        int counter = 0;
+        int finalAmount = amount;
+
+        if (amount == 0) return 0;
+        while (counter <= 2) {
+            finalAmount *= .9;
+            counter++;
+        }
+
+        return finalAmount;
     }
 
     public static void main(String[] args) {
